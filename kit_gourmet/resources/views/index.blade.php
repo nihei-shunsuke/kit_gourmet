@@ -14,6 +14,7 @@
             <h1>KITグルメ</h1>
             <span>ジャンル</span>　<input type="text" id="junre" name="search[junre]">
             <span>検索範囲</span>　<select id="search_range" name="search[range]"></select>
+            <span>表示順</span>　<input type="text" id="search_sort" name="search[sort]">
             <span>表示件数</span>　<input type="text" id="result_count" name="search[count]">
             <input type="submit" value="検索">
         </form>
