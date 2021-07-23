@@ -22,6 +22,7 @@ class SearchController extends Controller
         $keyword = $request["search"]["junre"];
         $range = $request["search"]["range"];
         $count = $request["search"]["count"];
+        $sort = $request["search"]["sort"];
 
         // インスタンス生成
         $client = new Client();
@@ -39,7 +40,10 @@ class SearchController extends Controller
                 'keyword' => $keyword,
                 'range' => $range,
                 'count' => $count,
-                'format' => 'json',
+                'sort' => $sort,
+                'lat' => 36.5310338,
+                'lng' => 136.6284361,
+                'format' => 'json'
             ],
         ];
 
@@ -49,8 +53,10 @@ class SearchController extends Controller
         // 'format' => 'json'としたのでJSON形式でデータが返ってくるので、連想配列型のオブジェクトに変換
         $shops = json_decode($response->getBody(), true)['results'];
 
-        // dd($shops);
+        $res = [$keyword, $range, $sort, $count, $shops];
+        // dd($res);
+        // dd($res[4]["shop"]);
         // index.blade.phpを表示する
-        return view('index', compact('shops'));
+        return view('result')->with(["responses" => $res]);
     }
 }
