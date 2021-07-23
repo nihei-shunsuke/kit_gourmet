@@ -19,6 +19,5 @@
             <input type="submit" value="検索">
         </form>
     </header>
-    <div id="result"></div>
 </body>
 </html>
