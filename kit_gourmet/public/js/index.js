@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function() {
         search_range.appendChild(option);
     }
     let search_sort = document.getElementById('search_sort');
-    for(var i=0; i<=4; i++){
+    for(var i=0; i<=3; i++){
         let option = document.createElement("option");
         option.text = sort[i];
         option.value = i + 1 ;
