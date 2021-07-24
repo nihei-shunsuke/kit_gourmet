@@ -18,5 +18,5 @@
 use App\Http\Controllers\SearchController;
 
 Route::get("/", "SearchController@index");
-
+Route::get("demo", "SearchController@demo");
 Route::post("/result", "SearchController@hotpepperSearch");
