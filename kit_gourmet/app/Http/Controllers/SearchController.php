@@ -59,4 +59,8 @@ class SearchController extends Controller
         // index.blade.phpを表示する
         return view('result')->with(["responses" => $res]);
     }
+
+    public function demo(){
+        return view("demo");
+    }
 }
